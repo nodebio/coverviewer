@@ -1,0 +1,79 @@
+<html>
+<head>
+
+  <!-- Styles -->
+  <link rel="stylesheet" type="text/css" href="../jviz/jviz.css">
+  <link rel="stylesheet" type="text/css" href="./font.css">
+  <link rel="stylesheet" type="text/css" href="./coverviewer.css">
+
+  <!-- JavaScript vendor -->
+  <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="../../bower_components/cvjs/dist/cv.min.js"></script>
+  <script src="../../bower_components/objectsort/dist/objectsort.min.js"></script>
+
+  <!-- Javascript libs -->
+  <script src="../jviz/jviz.js"></script>
+  <script src="./coverviewer.js"></script>
+
+  <!-- JavaScript runs -->
+  <script type="text/javascript">
+
+    //Initialize the element
+    var c = null;
+
+    //When document is ready
+    $(document).ready(function(){
+
+      //Initialize
+      c = new CoverViewer('div');
+
+      //Create the options object
+      var opt = {};
+
+      //Add the import karyotypes option
+      opt.importKaryotypes = {};
+      opt.importKaryotypes.url = '/test/coverviewer/karyotypes.json'; //Karyotypes url
+      opt.importKaryotypes.parser = function(r){ return r.chr; }; //Karyotypes parser
+
+      //Add the import regions option
+      opt.importRegions = {};
+      opt.importRegions.url = '/test/coverviewer/regions.json'; //Regions url
+
+      //Add the import cover option
+      opt.importCover = {};
+      opt.importCover.url = '/test/coverviewer/test4.json'; //Cover url
+      opt.importCover.parser = function(r){ return r['1']; }; //Cover parser
+
+      //Add the import genes option
+      opt.importGenes = {};
+      opt.importGenes.url = 'http://bioinfolab005.uv.es:4000/get/{specie}/{assembly}/region/{region}'; //Genes url
+      opt.importGenes.parser = function(r){ return r; }; //Genes parser
+
+      //Add the import names option
+      opt.importNames = {};
+      opt.importNames.url = '/test/coverviewer/names.json'; //Names url
+      //opt.importNames.json = ['CONTROL','BAM1','BAM2','BAM3','BAM4']; //Names object
+
+      //Save the options
+      c.Options(opt);
+
+      //Add the marks
+      c.Marks([
+        { chromosome: '1', start: 6527000, end: 6527500 },
+        { chromosome: '1', start: 6528380, end: 6528530 }
+      ]);
+
+      //Start
+      c.Init();
+
+    });
+  </script>
+
+</head>
+<body style="margin: 10px; padding: 0px; background-color: #ffffff;">
+
+  <!-- Content div -->
+  <div id="div"></div>
+
+</body>
+</html>
