@@ -1,0 +1,123 @@
+//Import all mixins
+@import "all";
+
+$teal: #00BFA5 !default;
+
+//Main class
+.CoverViewer
+{
+	//Include tool
+	@include jvizTool;
+
+	//Include cursor
+	@include jvizCursor;
+
+	//Loading
+	&-loading
+	{
+		//Style
+		display: block; z-index: 9999;
+
+		//Loading screen
+		&-screen
+		{
+			display: block; position: relative; transition: all 0.5s;
+			top: 0px; background-color: rgba($jvizWhite, 0.9); z-index: 99999;
+		}
+
+		//Animation
+		&-anim { @include jvizAnimation($teal); }
+	}
+
+	//Navbar
+	&-navbar
+	{
+		//Include navbar
+		@include jvizToolNavbar;
+
+		//Navbar buttons
+		&-btn
+		{
+			//Labels button
+			&-labels { @include jvizFormBtnNavy; float: right; }
+
+			//Search button
+			&-search { @include jvizFormBtnIconLight(jvizIcon('search')); float: left; }
+
+			//Karyotypes button
+			&-karyotypes { @include jvizFormBtnIconLight(''); float: left; margin-left: 0px; }
+		}
+
+		//Navbar input label
+		&-label { @include jvizFormLabel; float: left; }
+
+		//Navbar input
+		&-input { @include jvizFormInput; float: left; margin-right: 0px; }
+	}
+
+	//Alert
+	&-alert { @include jvizAlert; }
+
+	//Panels
+	&-panel { @include jvizToolPanel; }
+
+	//Track
+	&-track { @include jvizToolCanvasTrack; }
+
+	//Labels dialog
+	&-labels
+	{
+		//Include the dialog mixin
+		@include jvizDialog;
+
+		//Row
+		&-row
+		{
+			//Display
+			display: inline-block; height: 40px; line-height: 40px; width: 320px;
+
+			//Border
+			border-radius: 5px;
+
+			//Background color
+			background-color: $jvizGrey3;
+
+			//Padding
+			padding: { left: 5px; right: 5px; }
+
+			//Margin
+			margin: 5px;
+
+			//Hover
+			&:hover { background-color: $jvizGrey2; }
+		}
+
+		//Names
+		&-names { @include jvizFontBold; font-size: 13px; }
+
+		//Switchers
+		&-switch { @include jvizFormSwitch; }
+
+		//Done button
+		&-done { @include jvizFormBtn($jvizGreen); margin-top: 10px; }
+	}
+
+	//Genes tooltip
+	&-genes-tooltip { @include jvizToolTip; }
+
+	//Foot
+	&-foot
+	{
+		//Style
+		display: block; width: calc(100% - 20px); padding: 10px;
+
+		//Background
+		background-color: $jvizGrey4;
+
+		//Border
+		border: { radius: 5px; }
+
+		//Margin
+		margin: { top: 10px; }
+	}
+}
