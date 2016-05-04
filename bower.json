@@ -1,0 +1,5 @@
+{
+	"name": "coverviewer",
+	"private": true,
+	"dependencies": { "jquery": "2.2.3", "cvjs": "1.0.0", "objectsort": "1.0.0" }
+}
