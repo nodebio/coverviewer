@@ -1,0 +1,13 @@
+{
+	"name": "coverviewer",
+	"description": "An interactive module for visualizing sequence coverage in delimited regions",
+	"authors":
+	[
+		{ "name": "Josemi Juanes", "email": "j.miguel.juanes@uv.es" },
+		{ "name": "Vicente Arnau", "email": "vicente.arnau@uv.es" },
+		{ "name": "Paco Garcia", "email": "fgarcia@cipf.es" },
+		{ "name": "Joaquin Dopazo", "email": "jdopazo@cipf.es" }
+	],
+	"buildPath": "./build/",
+	"dependencies": { "jviz": "dev" }
+}
