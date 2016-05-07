@@ -24,11 +24,11 @@
     //When document is ready
     $(document).ready(function(){
 
-      //Initialize
-      c = new CoverViewer('div');
-
       //Create the new GDBase adapter
       var gdbase = new jvizGDBaseAdapter('http://' + 'bioinfolab005.uv.es:3000');
+      
+      //Initialize
+      c = new CoverViewer('div');
 
       //Create the options object
       var opt = {};
