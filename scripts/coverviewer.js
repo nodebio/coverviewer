@@ -403,6 +403,7 @@ var CoverViewer = function(id)
   this.genes.clickfirst = false; //For prevent errors
   this.genes.clickstart = 0; //Click orginal position
   this.genes.list = []; //Genes positions list
+  this.genes.ensembl = new jvizEnsemblAdapter();
 
   //Genes draw
   this.genes.draw.width = 0; //Genes draw width
