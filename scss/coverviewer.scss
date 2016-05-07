@@ -1,5 +1,5 @@
 //Import all mixins
-@import "all";
+@import "{JVIZ_MODULES}jviz/scss/all";
 
 $teal: #00BFA5 !default;
 
@@ -11,23 +11,6 @@ $teal: #00BFA5 !default;
 
 	//Include cursor
 	@include jvizCursor;
-
-	//Loading
-	&-loading
-	{
-		//Style
-		display: block; z-index: 9999;
-
-		//Loading screen
-		&-screen
-		{
-			display: block; position: relative; transition: all 0.5s;
-			top: 0px; background-color: rgba($jvizWhite, 0.9); z-index: 99999;
-		}
-
-		//Animation
-		&-anim { @include jvizAnimation($teal); }
-	}
 
 	//Navbar
 	&-navbar
