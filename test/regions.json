@@ -1,0 +1,5 @@
+[
+	{ "chromosome": "1", "start": 6527000, "end": 6530500, "name": "TEST" },
+	{ "chromosome": "2", "start": 6500000, "end": 6600000, "name": "TEST2" },
+	{ "chromosome": "X", "start": 18443699, "end": 18671774, "name": "CDKL5" }
+]
