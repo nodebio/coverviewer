@@ -1,18 +1,18 @@
 <html>
 <head>
 
-  <!-- Styles -->
-  <link rel="stylesheet" type="text/css" href="../jviz/jviz.css">
-  <link rel="stylesheet" type="text/css" href="./font.css">
-  <link rel="stylesheet" type="text/css" href="./coverviewer.css">
-
   <!-- JavaScript vendor -->
-  <script src="../../bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="../../bower_components/cvjs/dist/cv.min.js"></script>
-  <script src="../../bower_components/objectsort/dist/objectsort.min.js"></script>
+  <script src="https://josemi-content.appspot.com/js/jquery/jquery.min.js"></script>
+  <script src="https://josemi-content.appspot.com/js/cvjs/cv.min.js"></script>
+  <script src="https://josemi-content.appspot.com/js/objectsort/objectsort.min.js"></script>
 
-  <!-- Javascript libs -->
+  <!-- Import jviz -->
+  <link rel="stylesheet" type="text/css" href="../jviz/jviz.css">
+  <link rel="stylesheet" type="text/css" href="../jviz/font.css">
   <script src="../jviz/jviz.js"></script>
+
+  <!-- Import coverviewer -->
+  <link rel="stylesheet" type="text/css" href="./coverviewer.css">
   <script src="./coverviewer.js"></script>
 
   <!-- JavaScript runs -->
@@ -26,6 +26,9 @@
 
       //Initialize
       c = new CoverViewer('div');
+
+      //Create the new GDBase adapter
+      var gdbase = new jvizGDBaseAdapter('http://' + 'bioinfolab005.uv.es:3000');
 
       //Create the options object
       var opt = {};
@@ -41,13 +44,13 @@
 
       //Add the import cover option
       opt.importCover = {};
-      opt.importCover.url = '/test/coverviewer/test4.json'; //Cover url
+      opt.importCover.url = '/test/coverviewer/cover.json'; //Cover url
       opt.importCover.parser = function(r){ return r['1']; }; //Cover parser
 
       //Add the import genes option
       opt.importGenes = {};
-      opt.importGenes.url = 'http://bioinfolab005.uv.es:4000/get/{specie}/{assembly}/region/{region}'; //Genes url
-      opt.importGenes.parser = function(r){ return r; }; //Genes parser
+      opt.importGenes.url = gdbase.Url('region'); //Genes url
+      opt.importGenes.parser = gdbase.Parse; //Genes parser
 
       //Add the import names option
       opt.importNames = {};
