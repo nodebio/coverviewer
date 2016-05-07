@@ -227,7 +227,7 @@ CoverViewer.prototype.GenesTackInfoContent = function(g)
   if(typeof g.id !== 'undefined')
   {
     //Show the ensembl info
-    content = content + '<b>EnsemblID:</b> ' + EnsemblAdapter.LinkTo(g.id) + '<br>';
+    content = content + '<b>EnsemblID:</b> ' + this.genes.ensembl.SearchLink(g.id) + '<br>';
   }
 
   //Show the gene start and end
