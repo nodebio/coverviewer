@@ -2,9 +2,9 @@
 <head>
 
   <!-- JavaScript vendor -->
-  <script src="https://josemi-content.appspot.com/js/jquery/jquery.min.js"></script>
-  <script src="https://josemi-content.appspot.com/js/cvjs/cv.min.js"></script>
-  <script src="https://josemi-content.appspot.com/js/objectsort/objectsort.min.js"></script>
+  <script src="https://josemi-content.appspot.com/scripts/jquery/jquery.min.js"></script>
+  <script src="https://josemi-content.appspot.com/scripts/cvjs/cv.min.js"></script>
+  <script src="https://josemi-content.appspot.com/scripts/objectsort/objectsort.min.js"></script>
 
   <!-- Import jviz -->
   <link rel="stylesheet" type="text/css" href="../jviz/jviz.css">
@@ -35,26 +35,26 @@
 
       //Add the import karyotypes option
       opt.importKaryotypes = {};
-      opt.importKaryotypes.url = '/test/coverviewer/karyotypes.json'; //Karyotypes url
+      opt.importKaryotypes.url = '/test/karyotypes.json'; //Karyotypes url
       opt.importKaryotypes.parser = function(r){ return r.chr; }; //Karyotypes parser
 
       //Add the import regions option
       opt.importRegions = {};
-      opt.importRegions.url = '/test/coverviewer/regions.json'; //Regions url
+      opt.importRegions.url = '/test/regions.json'; //Regions url
 
       //Add the import cover option
       opt.importCover = {};
-      opt.importCover.url = '/test/coverviewer/cover.json'; //Cover url
+      opt.importCover.url = '/test/cover.json'; //Cover url
       opt.importCover.parser = function(r){ return r['1']; }; //Cover parser
 
       //Add the import genes option
       opt.importGenes = {};
-      opt.importGenes.url = gdbase.Url('region'); //Genes url
-      opt.importGenes.parser = gdbase.Parse; //Genes parser
+      opt.importGenes.url = gdbase.Url('region', { dataset: 'genes' }); //Genes url
+      opt.importGenes.parser = gdbase.ParseConcat; //Genes parser
 
       //Add the import names option
       opt.importNames = {};
-      opt.importNames.url = '/test/coverviewer/names.json'; //Names url
+      opt.importNames.url = '/test/names.json'; //Names url
       //opt.importNames.json = ['CONTROL','BAM1','BAM2','BAM3','BAM4']; //Names object
 
       //Save the options
