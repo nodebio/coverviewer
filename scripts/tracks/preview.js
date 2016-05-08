@@ -139,7 +139,7 @@ CoverViewer.prototype.PreviewTrackChromsomeTitle = function()
 };
 
 //CoverViewer Preview track chromosome mouse move
-CoverViewer.prototype.PreviewTrackChromsomeMoseMove = function(x, y)
+CoverViewer.prototype.PreviewTrackChromsomeMouseMove = function(x, y)
 {
   //Draw the position label
   this.preview.ChromosomeDrawPosition(x, y);
@@ -149,7 +149,7 @@ CoverViewer.prototype.PreviewTrackChromsomeMoseMove = function(x, y)
 };
 
 //CoverViewer Preview track chromosome mouse up
-CoverViewer.prototype.PreviewTrackChromsomeMoseUp = function(x, y)
+CoverViewer.prototype.PreviewTrackChromsomeMouseUp = function(x, y)
 {
   //Get the region index
   var index = this.preview.ChromosomeClickRegion(x, y);
@@ -539,10 +539,10 @@ CoverViewer.prototype.PreviewTrackEvents = function(action, event, x, y)
   else if(this.draw.status === 'chromosome')
   {
     //Check for move action
-    if(action === 'move'){ this.PreviewTrackChromsomeMoseMove(x, y); }
+    if(action === 'move'){ this.PreviewTrackChromsomeMouseMove(x, y); }
 
     //Check for up action
-    else if(action === 'up'){ this.PreviewTrackChromsomeMoseUp(x, y); }
+    else if(action === 'up'){ this.PreviewTrackChromsomeMouseUp(x, y); }
   }
 
   //Check for karyotype status
