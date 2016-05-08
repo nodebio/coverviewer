@@ -497,8 +497,8 @@ var CoverViewer = function(id)
   this.marks = {};
   this.marks.fill = '#b490f5'; //Marks fill color
   this.marks.opacity = {}; //Marks opacity
-  this.marks.opacity.preview = 0.2; //Marks opacity preview
-  this.marks.opacity.cover = 0.2; //Marks opacity cover
+  this.marks.opacity.preview = 0.4; //Marks opacity preview
+  this.marks.opacity.cover = 0.3; //Marks opacity cover
   this.marks.label = ''; //Marks label
 
   //Marks position
