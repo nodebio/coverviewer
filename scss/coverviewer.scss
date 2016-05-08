@@ -28,7 +28,7 @@ $teal: #00BFA5 !default;
 			&-search { @include jvizFormBtnIconLight(jvizIcon('search')); float: left; }
 
 			//Karyotypes button
-			&-karyotypes { @include jvizFormBtnIconLight(''); float: left; margin-left: 0px; }
+			&-karyotypes { @include jvizFormBtnIconLight(jvizIcon('bio_karyotypes')); float: left; margin-left: 0px; }
 		}
 
 		//Navbar input label
