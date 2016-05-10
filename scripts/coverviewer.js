@@ -291,6 +291,7 @@ var CoverViewer = function(id)
   this.cover.busy = false; //Cover is busy
   this.cover.stroke = 2; //Stroke width
   this.cover.mouse = false; //Mouse active
+  this.cover.actual = 0; //Actual cover point
 
   //Cover default values
   this.cover.default = {};
