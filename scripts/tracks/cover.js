@@ -131,8 +131,11 @@ CoverViewer.prototype.CoverTrackDraw = function(s)
     console.log('CoverViewer: data successful adjusted to draw window');
   }
 
+  //Check the start
+  if(typeof s !== 'undefined'){ this.cover.actual = s; }
+
   //Get the draw start
-  this.cover.draw.start = s;
+  this.cover.draw.start = this.cover.actual;
 
   //Save the length window
   this.cover.draw.length = this.cover.draw.width;
