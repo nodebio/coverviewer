@@ -83,7 +83,7 @@ CoverViewer.prototype.DrawChromosome = function()
 
   //Draw the no genes
   //this.GenesTrackDrawNoGenes();
-  
+
   //Set core running as false
   this.core.running = false;
 
@@ -122,7 +122,7 @@ CoverViewer.prototype.DrawCover = function()
   this.cover.Resize();
 
   //Draw cover track
-  this.CoverTrackDraw(0);
+  this.CoverTrackDraw();
 
   //Draw preview track
   this.PreviewTrackDraw();
