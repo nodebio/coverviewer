@@ -492,7 +492,7 @@ var CoverViewer = function(id)
   this.points.text = { font: 'Quicksand', size: '12px', color: '#b8c6d6' };
   this.points.letter = 'K'; //Control points letter
   this.points.margin = 20; //Points margin
-  this.points.textmargin = {'top': 15, 'left': 4}; //Points text margin
+  this.points.textmargin = { 'top': 15, 'left': 4 }; //Points text margin
 
   //Marks
   this.marks = {};
