@@ -318,7 +318,7 @@ CoverViewer.prototype.PreviewTrackPreviewDraw = function()
   this.preview.window.height = this.preview.zone.height;
 
   //Reset the preview start point
-  this.preview.window.start = 0;
+  this.preview.window.start = this.cover.actual;
 
   //Initialize the label position y
   this.preview.label.posy = this.preview.zone.posy + this.preview.zone.height + this.preview.label.margin;
