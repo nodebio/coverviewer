@@ -34,6 +34,9 @@ CoverViewer.prototype.GoTo = function(region)
 	//Set the draw status as cover
 	this.draw.status = 'cover';
 
+	//Reset the actual
+	this.cover.actual = 0;
+
 	//Reset the cover data in cache
 	this.cover.data = null;
 
